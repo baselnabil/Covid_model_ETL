@@ -1,26 +1,18 @@
 -- Active: 1725273956848@@127.0.0.1@5432@dw
+CREATE TABLE IF NOT EXISTS order_dim(
+    order_id SERIAL PRIMARY KEY , 
+    invoice_id INT NOT NULL,
+    product_line VARCHAR(50),
+    unit_price INT NOT NULL , 
+    quantity INT NOT NULL , 
+    payment_method VARCHAR(50) NOT NULL ,
+    rating INT );
 
+DROP 
 
--- --Invoice ID,
--- Branch,City,
--- Customer type,
--- Gender,
--- Product line,
--- Unit price,
--- Quantity,
--- Tax 5%,
--- Total,
--- Date,Time,
--- Payment,cogs,
--- gross margin percentage,
--- gross income,Rating
-CREATE TABLE if not EXISTS customer_dim (
-    customer_id  SERIAL PRIMARY KEY,
-    invoice_id  int  , 
-    gender VARCHAR(9) ,
-    rating FLOAT ,
-    customer_city VARCHAR(50) ,
-    payment VARCHAR(50) not null ,
-    customer_type VARCHAR(50)
+CREATE TABLE IF NOT EXISTS junk_dim (
+    junk_id SERIAL PRIMARY KEY , 
+    customer_sex VARCHAR(9) ,
+    branch CHAR(4) ,
+    customer_type VARCHAR(9)
 );
-
