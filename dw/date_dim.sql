@@ -1,5 +1,5 @@
 create table date_dim (
-    date_id int not null PRIMARY KEY ,
+    date_id int not null PRIMARY KEY , 
     date date not null, 
     year int not null , 
     month int not null ,
@@ -9,7 +9,6 @@ create table date_dim (
     day_name VARCHAR(200) not null,
     quarter int not null
 );
-
 DO $$
 DECLARE
     start_date DATE := '2018-01-01';
